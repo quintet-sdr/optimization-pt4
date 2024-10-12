@@ -1,6 +1,24 @@
-# Introduction To Optimization / Home Assignment 1
+# Introduction To Optimization / Programming Task 2
 
 **by SDR**
+
+```shell
+python3.13 -m venv .venv/
+```
+
+Activate the virtual environment.
+
+```bash
+source .venv/bin/activate
+```
+
+```shell
+pip install poetry
+poetry install
+poetry run launch
+```
+
+---
 
 [![Bun][Bun.js]][Bun-url] [![TypesScript][TypeScript-logo]][TypeScript-url]
 
