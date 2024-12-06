@@ -50,9 +50,7 @@ We struggled to find the complete Bisection Method algorithm in the lectures, so
       no valid root can be found:
       - $emptyset$ (or $approx 2.000000$).
   ]
-
-#pagebreak()
-
+  #grid(rows: 6cm)
 + #[
     === Golden Section Method
 
