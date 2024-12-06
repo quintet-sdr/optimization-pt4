@@ -22,7 +22,7 @@ fn actual_solve_for(interval: Range<f64>, eps: f64) -> f64 {
     let Range { start: a, end: b } = interval;
     let c = (a + b) / 2.;
 
-    if (b - a) / 2. <= eps || f(c).abs() < eps {
+    if f(c).abs() < eps {
         return c;
     }
 
