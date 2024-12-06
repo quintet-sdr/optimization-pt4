@@ -1,10 +1,13 @@
-use std::{fs, ops::Range};
+use std::fs;
+use std::ops::Range;
 
 use color_eyre::Result;
 use serde::Deserialize;
 
 pub fn get() -> Result<Config> {
-    Ok(toml::from_str(&fs::read_to_string("input.toml")?)?)
+    let raw = fs::read_to_string("input.toml")?;
+    let parsed = toml::from_str(&raw)?;
+    Ok(parsed)
 }
 
 #[derive(Deserialize)]

@@ -7,6 +7,7 @@ mod golden_section;
 mod gradient_ascent;
 
 pub fn solve(input: Config) {
+    // Add empty lines between each task's output.
     task_1(&input.task_1);
     println!();
     task_2(input.task_2);
@@ -26,8 +27,8 @@ fn task_1(input: &Task1) {
                 bisection::f(input.interval.start),
                 input.interval.end,
                 bisection::f(input.interval.end),
-            ).red();
-            println!("{warning}");
+            );
+            println!("{}", warning.red());
             println!("root ?= {root}");
         }
     }
