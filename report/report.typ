@@ -43,7 +43,9 @@ We struggled to find the complete Bisection Method algorithm in the lectures, so
     === Bisection Method
 
     Algorithm:
-    - Enter an infinite loop. Set $c = (a + b) / 2$. If $"sign"(f(c)) = "sign"(f(a))$, mutate $a := c$. Otherwise, mutate $b := c$. If $|f(c)| < epsilon$, return $c$. Otherwise, continue.
+    - Enter an infinite loop. Set $c = (a + b) / 2$. \
+      If $"sgn"(f(c)) = "sgn"(f(a))$, mutate $a := c$ or mutate $b := c$ otherwise. \
+      Now, if $|f(c)| < epsilon$, return $c$. Otherwise, continue.
 
     + The choice of $[a, b]$ significantly affects convergence because it must contain a root of the function (i.e., the function values at the endpoints must have opposite signs). A smaller initial interval can lead to faster convergence, as the method will require fewer iterations to narrow down the root. Conversely, if the initial interval is too large or does not contain a root, the method may fail to converge or may take longer to find the root.
     + Given:
@@ -53,18 +55,18 @@ We struggled to find the complete Bisection Method algorithm in the lectures, so
       no valid root can be found:
       - $emptyset$ (or $approx 2.000000$).
   ]
-  #grid(rows: 140.25pt)
+  #grid(rows: 125.5835pt)
 + #[
     === Golden Section Method
 
     Algorithm:
     - Given $phi = (sqrt(5) + 1) / 2 approx 1.618$, calculate $1/phi = (sqrt(5) - 1) / 2 approx 0.618$. Enter an infinite loop. \
-      Set $x_1 = x_R - 1/phi (x_R - x_L)$ and $x_2 = x_L + 1/phi (x_R - x_L)$.
-      + If $f(x_1) < f(x_2)$, mutate $(a, b) := (x_1, x_R)$.
+      Set $x_1 = b - 1/phi (b - a)$ and $x_2 = a + 1/phi (b - a)$.
+      + If $f(x_1) < f(x_2)$, mutate $(a, b) := (x_1, b)$.
       + If $f(x_1) = f(x_2)$, mutate $(a, b) := (x_1, x_2)$.
-      + If $f(x_1) > f(x_2)$, mutate $(a, b) := (x_L, x_2)$.
+      + If $f(x_1) > f(x_2)$, mutate $(a, b) := (a, x_2)$.
 
-      When $x_R - x_L < epsilon$, the result can be returned from $(x_L + x_R) / 2$. Otherwise, continue.
+      When $b - a < epsilon$, the result can be returned from $(a + b) / 2$. Otherwise, continue.
 
     + The algorithm only works for unimodal functions because it relies on the property that a unimodal function has a single peak or trough within a given interval. This allows the method to systematically narrow down the search interval by eliminating sections that cannot contain the optimum, ensuring convergence to the maximum or minimum. In contrast, multimodal functions can have multiple peaks and valleys, making it impossible to guarantee that the method will find the global optimum.
     + Given:
