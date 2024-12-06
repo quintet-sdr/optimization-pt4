@@ -21,7 +21,7 @@ fn task_1(input: &Task1) {
         Ok(root) => println!("root = {root}"),
         Err(root) => {
             let warning = format!(
-                "Warning: f({}) = {} and f({}) = {} don't have different signs, so the root should be invalid.",
+                "Warning: f({}) = {} and f({}) = {} don't have opposite signs, so the root should be invalid.",
                 input.interval.start,
                 bisection::f(input.interval.start),
                 input.interval.end,
