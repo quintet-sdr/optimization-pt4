@@ -20,15 +20,16 @@
 
 == Programming Language
 
-Rust (Cargo). Run the code with #[
+#[
   #show raw: box.with(
     fill: luma(240),
     inset: (x: 4pt, y: 0pt),
     outset: (y: 4pt),
     radius: 3pt,
   )
-  `$ cargo run`
-].
+
+  Rust (Cargo). Run the code with `$ cargo run`. Edit the tests inside `input.toml`.
+]
 
 == Challenges Faced
 
