@@ -23,12 +23,14 @@
 #[
   #show raw: box.with(
     fill: luma(240),
-    inset: (x: 4pt, y: 0pt),
-    outset: (y: 4pt),
-    radius: 3pt,
+    inset: (x: 3pt, y: 0pt),
+    outset: (y: 3pt),
+    radius: 2pt,
   )
 
-  Rust (Cargo). Run the code with `$ cargo run`. Edit the tests inside `input.toml`.
+  - Rust (Cargo)
+  - Run the code with `$ cargo run`
+  - Edit the tests inside `input.toml`
 ]
 
 == Challenges Faced
