@@ -1,0 +1,16 @@
+[package]
+name = "optimization-pt4"
+version = "0.0.0"
+edition = "2021"
+
+[dependencies]
+color-eyre = "0.6.3"
+colored = "2.1.0"
+serde = { version = "1.0.215", features = ["derive"] }
+tailcall = "1.0.1"
+toml = "0.8.19"
+
+[lints.clippy]
+all = "warn"
+pedantic = "warn"
+nursery = "warn"

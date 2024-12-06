@@ -1,0 +1,12 @@
+[task-1]
+interval = [1, 2]
+tolerance = 1e-6
+
+[task-2]
+interval = [0, 5]
+tolerance = 1e-4
+
+[task-3]
+initial-guess = 0
+learning-rate = 0.1
+iterations = 100
