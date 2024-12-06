@@ -18,14 +18,8 @@ fn task_1(input: &Task1) {
     println!("Task 1");
 
     match bisection::solve_for(input.interval.clone(), input.tolerance) {
-        Ok(root) => {
-            #[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss)]
-            let eps = (-input.tolerance.log10()) as usize;
-            println!("root = {root:.eps$}");
-        }
+        Ok(root) => println!("root = {root}"),
         Err(root) => {
-            #[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss)]
-            let eps = (-input.tolerance.log10()) as usize;
             let warning = format!(
                 "Warning: f({}) = {} and f({}) = {} don't have different signs, so the root should be invalid.",
                 input.interval.start,
@@ -34,7 +28,7 @@ fn task_1(input: &Task1) {
                 bisection::f(input.interval.end),
             ).red();
             println!("{warning}");
-            println!("root ?= {root:.eps$}");
+            println!("root ?= {root}");
         }
     }
 }
@@ -44,9 +38,7 @@ fn task_2(input: Task2) {
 
     let (x_min, f_of_x_min) = golden_section::solve_for(input.interval, input.tolerance);
 
-    #[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss)]
-    let eps = (-input.tolerance.log10()) as usize;
-    println!("x_min = {x_min:.eps$}, f(x_min) = {f_of_x_min:.eps$}");
+    println!("x_min = {x_min}, f(x_min) = {f_of_x_min}");
 }
 
 fn task_3(input: &Task3) {
