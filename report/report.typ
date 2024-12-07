@@ -43,7 +43,7 @@ We struggled to find the complete Bisection Method algorithm in the lectures, so
     === Bisection Method
 
     Algorithm:
-    - Enter an infinite loop. Set $c = (a + b) / 2$. \
+    - If $f(a) times f(b) < 0$, enter an infinite loop. Set $c = (a + b) / 2$. \
       If $"sgn"(f(c)) = "sgn"(f(a))$, mutate $a := c$ or mutate $b := c$ otherwise. \
       Now, if $|f(c)| < epsilon$, return $c$. Otherwise, continue.
 
